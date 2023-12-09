@@ -1,6 +1,6 @@
-# Ejercicio 2 – Hola Mundo con Angular
+## Ejercicio 2 – Hola Mundo con Angular
 
-1. ¿Qué comando debes utilizar para crear un nuevo proyecto Angular
+1. ### ¿Qué comando debes utilizar para crear un nuevo proyecto Angular
     utilizando Angular CLI denominado ecommerce? 
 
     Para crear un nuevo proyecto Angular denominado "ecommerce" utilizando Angular CLI, se ejecuta el siguiente comando en tu terminal:
@@ -9,7 +9,7 @@
     ng new ecommerce
     ```
 
-    ### Ficheros de Configuración en la Raíz del Proyecto:
+    #### Ficheros de Configuración en la Raíz del Proyecto:
 
     - `tsconfing.app.json`: Configuración TypeScript específica para la aplicación.
 
@@ -29,11 +29,11 @@
 
     - `package-lock.json`: Archivo generado por npm que especifica la versión exacta de cada módulo instalado.
 
-    ### Directorio `node_modules`:
+    #### Directorio `node_modules`:
 
     - Contiene las dependencias del proyecto, incluyendo bibliotecas y módulos de terceros.
 
-    ### Directorio `src`:
+    #### Directorio `src`:
 
     - `index.html`: Página HTML principal de la aplicación.
 
@@ -52,7 +52,7 @@
     Esta estructura proporciona un marco organizativo estándar para proyectos Angular generados por Angular CLI, facilitando el desarrollo y mantenimiento del código.
 
 
-2. Explica cada uno de los siguientes decoradores generados por Angular CLI, detallando cada una de las propiedades que se definen en:
+2. ### Explica cada uno de los siguientes decoradores generados por Angular CLI, detallando cada una de las propiedades que se definen en:
 
     #### @NgModule en app.module.ts:
 
@@ -105,7 +105,7 @@
     })
     ```
 
-3. ¿Es posible inyectar el template y los estilos en línea de un componente sin necesidad de especificarlos en templateUrl, styleUrls? ¿Es recomendable hacer esto?
+3. ### ¿Es posible inyectar el template y los estilos en línea de un componente sin necesidad de especificarlos en templateUrl, styleUrls? ¿Es recomendable hacer esto?
 
     Sí, es posible inyectar el template y los estilos directamente en el decorador `@Component` utilizando las propiedades template y styles. Esto se llama "template inline" y "styles inline". 
 

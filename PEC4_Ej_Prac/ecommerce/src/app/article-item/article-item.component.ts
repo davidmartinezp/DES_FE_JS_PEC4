@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Article } from '../models/article.model';
+import { ArticleQuantityChange } from '../models/article-quantity-change.model';
+
 
 @Component({
   selector: 'app-article-item',
@@ -7,24 +9,34 @@ import { Article } from '../models/article.model';
   styleUrl: './article-item.component.css'
 })
 export class ArticleItemComponent {
-  @Input() article: Article = {
-    name: '',
-    imageUrl: '',
-    price: 0,
-    isOnSale: false,
-    quantityInCart: 0
-  };
+  @Input() article?: Article;
+  @Output() articleQuantityChange: EventEmitter<ArticleQuantityChange> = new EventEmitter();
+  @Output() increment = new EventEmitter<void>();
+  @Output() decrement = new EventEmitter<void>();
 
   incrementQuantity() {
     if (this.article) {
       this.article.quantityInCart++;
+      this.emitArticleQuantityChange();
     }
   }
   
   decrementQuantity() {
+    this.increment.emit();
     if (this.article && this.article.quantityInCart > 0) {
       this.article.quantityInCart--;
+      this.emitArticleQuantityChange();
     }
   }
 
+  private emitArticleQuantityChange() {
+    if (this.article) {
+      const articleQuantityChange: ArticleQuantityChange = {
+        article: this.article,
+        quantity: this.article.quantityInCart
+      };
+  
+      this.articleQuantityChange.emit(articleQuantityChange);
+    }
+  }
 }

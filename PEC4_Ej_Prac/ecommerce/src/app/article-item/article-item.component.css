@@ -1,4 +1,11 @@
-.on-sale {
+/* .on-sale {
     background-color: lightgreen;
-  }
+  } */
   
+.price {
+    color: black; 
+}
+
+.unavailable-price {
+    color: grey; 
+}
