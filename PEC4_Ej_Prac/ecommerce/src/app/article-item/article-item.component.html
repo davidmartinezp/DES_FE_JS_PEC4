@@ -1,0 +1,10 @@
+<div>
+    <div [ngClass]="{'on-sale': article.isOnSale}">
+        <h2>{{ article.name }}</h2>
+        <img [src]="article.imageUrl" alt="Imagen del artículo">
+        <p>Cantidad en el carrito: {{ article.quantityInCart }}</p>
+        <button (click)="incrementQuantity()" [disabled]="article.isOnSale === false">Incrementar</button>
+        <button (click)="decrementQuantity()" [disabled]="article.quantityInCart === 0">Decrement</button>
+    </div>
+ </div>
+  
